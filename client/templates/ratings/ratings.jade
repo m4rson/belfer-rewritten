@@ -1,0 +1,47 @@
+template(name='ratings')
+
+  h2  #{subject.name}  Ratings
+  
+  if errorMessages
+    each errorMessages
+      ul
+        li.alert.alert-danger #{this}
+        
+  .form-group
+    div
+      select.ratingCategory.form-control
+        option(value='') Choose Category 
+        each categories
+          option(value="#{name}") #{name}
+  .form-group
+    div
+      input.ratingValue.form-control(type='number', step='any', min='1', max='6', name='rating', placeholder='Choose Rating')
+  .form-group
+    div
+      input.ratingDescription.form-control(type='text' name='ratingDescription' placeholder='Rating Description')
+  .form-group
+    div
+      button.btn.btn-primary.btn-block.addRatingSubmit Add Rating 
+      
+  
+  table.table.table-hover
+    thead
+      tr
+        th Category
+        th Rating 
+        th Description
+        th Added
+        th Actions
+    tbody
+      each studentRatings
+        tr
+          td #{category}
+          td #{value}
+          td #{description}
+          td #{added}
+          td
+            a.btn.btn-xs.btn-warning.editRating(href="{{pathFor 'rating.edit'}}") Change 
+          td
+            button.btn.btn-xs.btn-danger.deleteRating Delete
+
+      

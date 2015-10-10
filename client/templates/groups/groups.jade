@@ -1,0 +1,31 @@
+template(name='groups')
+  h2 Add new group
+  if errorMessages
+    each errorMessages
+      ul
+        li.alert.alert-danger #{this}
+  .form-group
+    div
+      input.form-control.groupName(type='text' name='name' placeholder='Group Name' autofocus='autofocus')
+  .form-group
+    div
+      button.btn.btn-primary.btn-block.newGroupSubmit Add Group
+    
+  
+  table.table.table-hover
+    thead
+      tr
+        th  Group name  
+        th  Students
+        th  Actions 
+     tbody
+      each currentUserGroups
+        tr
+          td 
+            a.groupNameLink(href="{{pathFor 'group.show'}}") {{name}} 
+          td #{numberOfStudents}
+          td  
+            button.btn.btn-primary.btn-xs.btn-danger.deleteGroup Delete
+
+  
+  

@@ -1,0 +1,24 @@
+template(name='login')
+  h2 Log in
+  
+  if errorMessages
+    each errorMessages
+      ul
+        li.alert.alert-danger #{this}
+  if loginErr
+    ul
+      li.alert.alert-danger #{loginErr}
+        
+  .form-group
+    div
+      label(for='username') Username
+    div
+      input.form-control.loginUsername(type='text' name='username')
+  .form-group
+    div
+      label(for='password') Password
+    div
+      input.form-control.loginPassword(type='password' name='password')
+  .form-group
+    div
+      button.btn.btn-primary.btn-block.loginSubmit  Log in 

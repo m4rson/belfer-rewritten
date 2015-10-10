@@ -1,0 +1,8 @@
+template(name='studentInGroup')
+  tr
+    td 
+      a.setStudentId(href="{{pathFor 'student.show'}}") #{firstName}
+    td
+      a.setStudentId(href="{{pathFor 'student.show'}}") #{lastName}
+    td
+      button.btn.btn-danger.btn-xs.deleteStudent Delete

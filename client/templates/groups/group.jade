@@ -1,0 +1,41 @@
+template(name='group')
+  button.btn.btn-primary.goBack Go Back
+  h1 Group: 
+     i #{name}
+      | (#{numberOfStudents}) 
+  
+  h3 Add new Student
+  
+  if errorMessages
+    each errorMessages
+      ul
+        li.alert.alert-danger #{this}
+        
+  .form-group
+    div
+      input.form-control.studentFName(type='text' name='firstName' placeholder='First name' required='')
+  .form-group
+    div
+      input.form-control.studentLName(type='text' name='lastName' placeholder='Last name' required='')
+  .form-group
+    div
+      button.btn.btn-primary.btn-block.addStudentSubmit Add Student
+      
+  
+  table.table.table-hover.table-bordered
+    thead
+      tr
+        th First Name
+        th Last Name
+        th Actions 
+    tbody
+      each groupStudents
+        tr
+          td 
+            a.setStudentId(href="{{pathFor 'student.show'}}") #{firstName}
+          td
+            a.setStudentId(href="{{pathFor 'student.show'}}") #{lastName}
+          td
+            button.btn.btn-danger.btn-xs.deleteStudent Delete
+
+  

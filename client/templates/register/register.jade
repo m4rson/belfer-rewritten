@@ -1,0 +1,27 @@
+template(name='register')
+  h2 Register
+  
+  if errorMessages
+    each errorMessages
+      ul
+        li.alert.alert-danger #{this}
+  
+  .form-group
+    div
+      label(for='username') Username
+    div
+      input.registerUsername.form-control(type='text' name='username')
+  .form-group
+    div
+      label(for='email') Email
+    div
+      input.registerEmail.form-control(type='text' name='email')
+  .form-group
+    div
+      label(for='password') Password
+    div
+      input.registerPassword.form-control(type='password' name='password')
+  .form-group
+    div
+      button.btn.btn-primary.btn-block.registerSubmit Register
+    

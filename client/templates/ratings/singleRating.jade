@@ -1,0 +1,10 @@
+template(name='singleRating')
+  tr
+    td #{category}
+    td #{value}
+    td #{description}
+    td
+      //- button.btn.btn-xs.btn-warning.editRating Change
+      a.btn.btn-xs.btn-warning.editRating(href="{{pathFor 'rating.edit'}}") Change 
+    td
+      button.btn.btn-xs.btn-danger.deleteRating Delete

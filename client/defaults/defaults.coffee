@@ -1,0 +1,9 @@
+Session.setDefault 'groupId', null
+Session.setDefault 'groupName', null
+Session.setDefault 'studentId', null
+Session.setDefault 'studentLastName', null
+Session.setDefault 'subjectId', null
+Session.setDefault 'subjectName', null
+Session.setDefault 'loginErr', null
+Session.setDefault 'editRating', false
+Session.setDefault 'flashMessage', null

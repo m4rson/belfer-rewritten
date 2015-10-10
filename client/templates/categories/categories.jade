@@ -1,0 +1,29 @@
+template(name='categories')
+
+  h2 Add new Category 
+  
+  if errorMessages
+    each errorMessages
+      ul
+        li.alert.alert-danger #{this}
+  
+  .form-group
+    div
+      input.form-control.categoryName(type='text' name='name' placeholder='Category Name') 
+  .form-group
+    div
+      button.btn.btn-primary.btn-block.newCategorySubmit Add Category
+      
+  
+  table.table.table-hover
+    thead
+      tr
+        th Category name
+        th Actions
+    tbody
+      each userCategories
+        tr
+          td #{name}
+          td 
+            button.btn.btn-primary.btn-xs.btn-danger.deleteCategory Delete
+    

@@ -1,0 +1,35 @@
+template(name='header')
+  nav.navbar.navbar-inverse.navbar-fixed-top
+    .container
+      .navbar-header
+        button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target="#navbar", aria-expanded='false', aria-controls="navbar")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+          
+        h2
+          span.logoB b
+          span.logoE e
+          span.logoL l 
+          span.logoF f 
+          span.logoE e
+          span.logoB r
+      #navbar.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li
+            a(href="{{pathFor 'home'}}") Home
+          if currentUser
+            li
+              a(href="{{pathFor 'groups'}}")  My groups 
+            li
+              a(href="{{pathFor 'categories'}}") Rating Categories  
+            li
+               button.logoutButton Log out #{currentUser.username}
+              //- a(href="{{pathFor 'logout'}}") Logout #{currentUser.username}
+          else
+            li
+              a(href="{{pathFor 'register'}}") Register
+            li
+              a(href="{{pathFor 'login'}}") Log in
+    

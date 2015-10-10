@@ -1,0 +1,5 @@
+@Groups = new Mongo.Collection 'groups'
+@Students = new Mongo.Collection 'students'
+@Subjects = new Mongo.Collection 'subjects'
+@Categories = new Mongo.Collection 'categories'
+@Ratings = new Mongo.Collection 'ratings'

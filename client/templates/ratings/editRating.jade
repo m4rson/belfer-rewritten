@@ -1,0 +1,28 @@
+template(name='editRating')
+  button.btn.btn.primary.btn-block.cancelUpdate Cancel
+  
+  if errorMessages
+    each errorMessages
+      ul
+        li.alert.alert-danger #{this}
+        
+  .form-group
+    div
+      select.ratingCategory.form-control
+        option(value="#{category}") Choose Category 
+        each categories
+          option(value="#{name}") #{name}
+  .form-group
+    div
+      input.ratingValue.form-control(type='number', step='any', min='1', max='6', name='rating', value="#{value}", placeholder='Choose Rating')
+  .form-group
+    div
+      input.ratingDescription.form-control(type='text' name='ratingDescription' placeholder='Rating Description' value="#{description}")
+  .form-group
+    div
+      button.btn.btn-primary.btn-block.editRatingSubmit Update Rating 
+    
+      
+
+
+      
